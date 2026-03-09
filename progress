@@ -1,0 +1,15 @@
+Day 1: 21-02-2026 Saturday
+    Created supabase datbase
+    set up supabase client in frontend
+    write sql queries to create tables, Enums
+
+Day 2: 22-02-2026 Sunday
+    Designed menu page html
+    set up redux toolkit
+    Write menuSlice to fetch menu items from supabase
+    Populated data in menu page
+    Write OrderSlice to add/remove items from cart
+
+Day 3: 23-02-2026
+    fetch categories from db and populate menu items based on it
+    button Add/increase or remove/decrease functional 

@@ -1,0 +1,5 @@
+.selected-category {
+  border-bottom: #007bff 3px solid;
+  /* background-color: #007bff; */
+  color: white;
+}

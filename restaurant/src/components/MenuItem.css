@@ -1,0 +1,19 @@
+.menu-item {
+    border: 1px solid #ccc;
+    width: 300px;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: rgb(69, 91, 26);
+}
+.quantity-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.menu-item-footer {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 10px;
+}
