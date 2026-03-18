@@ -1,0 +1,170 @@
+/* Container setup */
+.billing-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: #f4f7f6;
+}
+
+.billing-header {
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Main Layout Split */
+.billing-container {
+  display: flex;
+  flex: 1; /* Takes up remaining vertical space */
+  overflow: hidden; /* Prevents double scrollbars */
+}
+
+/* Sidebar Styling */
+.billing-sidebar {
+  width: 280px;
+  background: #2799e6;
+  border-right: 1px solid #dddddd;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.table-item {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.table-item:hover {
+  background-color: #f0f7ff;
+}
+
+.table-item.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+/* Content Area Styling */
+.billing-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: #666464;
+}
+
+/* Order Item Card (Inside Billing component) */
+.order-card {
+  /* background: white; */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  text-decoration: wavy black;
+}
+
+.bill-total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #eee;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* This only triggers when the user prints */
+@media print {
+  /* 1. Hide everything except the main billing content */
+  .billing-header, 
+  .billing-sidebar,
+  .checkout-btn,
+  .back-button {
+    display: none !important;
+  }
+
+  /* 2. Reset the layout for the paper */
+  .billing-dashboard, 
+  .billing-container {
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .billing-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* 3. Style the bill specifically for paper (e.g., thermal printer look) */
+  .order-card {
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    max-width: 300px; /* Typical receipt width, or 100% for A4 */
+    margin: 0 auto;
+  }
+
+  /* Ensure colors are black/white for clarity */
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+
+/*  */
+
+.order-section {
+  border-bottom: 1px dashed #ccc;
+  padding: 15px 0;
+}
+
+.order-subheader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  /* color: #666; */
+  margin-bottom: 8px;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.item-qty {
+  color: #888;
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
+
+.bill-footer {
+  margin-top: 20px;
+  padding: 15px;
+  /* background-color: #f9f9f9; */
+  border: 1px solid #eee;
+}
+
+.grand-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+.total-amount {
+  color: #2ecc71; /* Green for the final price */
+}
+
+/* Specific to your previous "red border" request, but cleaner */
+@media print {
+  .checkout-btn { display: none; }
+  .bill-footer { border: 2px solid black; }
+}

@@ -18,7 +18,8 @@ function App() {
           <Route path="cart" element={<MenuPage/>} />
         </Route>
         <Route path="billing" element={<BillingLayout />}>
-          <Route index element={<Billing />} />
+          <Route index element={<Billing/>}/>
+          <Route index path=":table_number" element={<Billing />} />
         </Route>
       </Routes>
     </div>

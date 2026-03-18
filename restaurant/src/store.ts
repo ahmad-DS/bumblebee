@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import menuReducer from './pages/menu/menuSlice'
+import billingReducer from "./pages/billing/billingSlice"
 // ...
 
 export const store = configureStore({
   reducer: {
     menu: menuReducer,
+    billing: billingReducer
   },
 })
 
